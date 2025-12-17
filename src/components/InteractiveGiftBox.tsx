@@ -43,16 +43,16 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
         </motion.h2>
 
         {/* Interactive Gift Box */}
-        <div className="relative min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex items-center justify-center">
+        <div className="relative min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center justify-center py-8">
           <motion.div
-            className="relative w-72 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[400px] mx-auto cursor-pointer"
+            className="relative w-64 h-72 sm:w-72 sm:h-80 md:w-80 md:h-96 mx-auto cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleGiftClick}
           >
             {/* Gift Box Body */}
             <motion.div
-              className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-56 h-44 sm:w-64 sm:h-48 md:w-72 md:h-56 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl"
+              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-52 h-40 sm:w-60 sm:h-44 md:w-64 md:h-48 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl"
               animate={clickCount > 0 ? { y: 10 } : {}}
             >
               {/* Box pattern */}
@@ -65,7 +65,7 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
 
             {/* Gift Box Lid */}
             <motion.div
-              className="absolute top-8 left-1/2 transform -translate-x-1/2 w-60 h-20 sm:w-68 sm:h-22 md:w-80 md:h-24 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl origin-bottom"
+              className="absolute bottom-32 sm:bottom-36 md:bottom-40 left-1/2 transform -translate-x-1/2 w-56 h-16 sm:w-64 sm:h-18 md:w-72 md:h-20 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl origin-bottom"
               animate={clickCount > 0 ? { rotateX: -45, y: -30, z: 20 } : {}}
               style={{ transformStyle: 'preserve-3d' }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -78,20 +78,20 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
               
               {/* Bow */}
               <motion.div
-                className="absolute -top-12 left-1/2 transform -translate-x-1/2"
+                className="absolute -top-8 sm:-top-10 md:-top-12 left-1/2 transform -translate-x-1/2"
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <div className="relative w-24 h-16">
+                <div className="relative w-20 h-14 sm:w-24 sm:h-16">
                   {/* Left bow loop */}
-                  <div className="absolute left-0 top-0 w-10 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full transform -rotate-45" />
+                  <div className="absolute left-0 top-0 w-8 h-10 sm:w-10 sm:h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full transform -rotate-45" />
                   {/* Right bow loop */}
-                  <div className="absolute right-0 top-0 w-10 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full transform rotate-45" />
+                  <div className="absolute right-0 top-0 w-8 h-10 sm:w-10 sm:h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full transform rotate-45" />
                   {/* Center knot */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-red-600 rounded-full shadow-lg" />
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 bg-red-600 rounded-full shadow-lg" />
                   {/* Ribbon tails */}
-                  <div className="absolute top-8 left-4 w-4 h-8 bg-gradient-to-b from-red-600 to-red-700 transform rotate-12" />
-                  <div className="absolute top-8 right-4 w-4 h-8 bg-gradient-to-b from-red-600 to-red-700 transform -rotate-12" />
+                  <div className="absolute top-7 sm:top-8 left-3 sm:left-4 w-3 h-6 sm:w-4 sm:h-8 bg-gradient-to-b from-red-600 to-red-700 transform rotate-12" />
+                  <div className="absolute top-7 sm:top-8 right-3 sm:right-4 w-3 h-6 sm:w-4 sm:h-8 bg-gradient-to-b from-red-600 to-red-700 transform -rotate-12" />
                 </div>
               </motion.div>
             </motion.div>
