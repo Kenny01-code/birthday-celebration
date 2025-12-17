@@ -43,16 +43,16 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
         </motion.h2>
 
         {/* Interactive Gift Box */}
-        <div className="relative">
+        <div className="relative min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex items-center justify-center">
           <motion.div
-            className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto cursor-pointer"
+            className="relative w-72 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[400px] mx-auto cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleGiftClick}
           >
             {/* Gift Box Body */}
             <motion.div
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-36 sm:w-56 sm:h-40 md:w-64 md:h-48 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl"
+              className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-56 h-44 sm:w-64 sm:h-48 md:w-72 md:h-56 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl"
               animate={clickCount > 0 ? { y: 10 } : {}}
             >
               {/* Box pattern */}
@@ -65,7 +65,7 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
 
             {/* Gift Box Lid */}
             <motion.div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 w-52 h-16 sm:w-60 sm:h-18 md:w-72 md:h-20 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl origin-bottom"
+              className="absolute top-8 left-1/2 transform -translate-x-1/2 w-60 h-20 sm:w-68 sm:h-22 md:w-80 md:h-24 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl origin-bottom"
               animate={clickCount > 0 ? { rotateX: -45, y: -30, z: 20 } : {}}
               style={{ transformStyle: 'preserve-3d' }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -78,7 +78,7 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
               
               {/* Bow */}
               <motion.div
-                className="absolute -top-8 left-1/2 transform -translate-x-1/2"
+                className="absolute -top-12 left-1/2 transform -translate-x-1/2"
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
@@ -107,12 +107,12 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
           {/* Click instruction */}
           {clickCount === 0 && (
             <motion.p
-              className="mt-12 text-2xl text-pink-200"
+              className="mt-8 sm:mt-12 text-xl sm:text-2xl text-pink-200 px-4"
               style={{ fontFamily: "'Dancing Script', cursive" }}
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Click the gift to unwrap your surprise! 🎁
+              👆 Tap the gift to unwrap your surprise! 🎁
             </motion.p>
           )}
         </div>
@@ -121,7 +121,7 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
         <AnimatePresence>
           {clickCount >= 1 && (
             <motion.div
-              className="mt-16 p-8 bg-gradient-to-br from-pink-100 to-yellow-50 rounded-2xl shadow-2xl border-4 border-yellow-400 max-w-lg mx-auto"
+              className="mt-8 sm:mt-16 p-6 sm:p-8 bg-gradient-to-br from-pink-100 to-yellow-50 rounded-2xl shadow-2xl border-4 border-yellow-400 max-w-lg mx-auto"
               initial={{ opacity: 0, scale: 0.5, rotateZ: -10 }}
               animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
               exit={{ opacity: 0 }}
@@ -129,10 +129,10 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
             >
               <div className="relative">
                 <Heart className="absolute -top-4 -right-4 w-12 h-12 text-red-500" fill="currentColor" />
-                <p className="text-3xl text-purple-900 mb-4" style={{ fontFamily: "'Dancing Script', cursive" }}>
+                <p className="text-2xl sm:text-3xl text-purple-900 mb-4" style={{ fontFamily: "'Dancing Script', cursive" }}>
                   You make my world brighter ❤️
                 </p>
-                <p className="text-xl text-purple-800">
+                <p className="text-lg sm:text-xl text-purple-800">
                   Every moment with you is a treasure, Gracia. Your smile lights up my life in ways words can't describe.
                 </p>
               </div>

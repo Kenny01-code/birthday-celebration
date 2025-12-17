@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Flame, Sparkles, Heart, Star, Share2, Copy } from 'lucide-react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Point, PointMaterial } from '@react-three/drei';

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Sparkles } from 'lucide-react';
 import { FloatingParticles } from './FloatingParticles';
@@ -12,6 +12,11 @@ export function LandingScreen({ onEnter, onMusicStart }: LandingScreenProps) {
   const [isDoorsOpen, setIsDoorsOpen] = useState(false);
   const [showEnterButton, setShowEnterButton] = useState(false);
   const [audioStarted, setAudioStarted] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
+
+  useEffect(() => {
+    setDimensions({ width: window.innerWidth, height: window.innerHeight });
+  }, []);
 
   const startAudio = () => {
     if (!audioStarted) {
@@ -152,31 +157,36 @@ export function LandingScreen({ onEnter, onMusicStart }: LandingScreenProps) {
       </div>
 
       {/* Floating hearts and stars */}
-      {[...Array(15)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute"
-          initial={{
-            x: Math.random() * window.innerWidth,
-            y: window.innerHeight + 50,
-          }}
-          animate={{
-            y: -100,
-            x: Math.random() * window.innerWidth,
-          }}
-          transition={{
-            duration: 10 + Math.random() * 10,
-            repeat: Infinity,
-            delay: Math.random() * 5,
-          }}
-        >
-          {i % 2 === 0 ? (
-            <Heart className="w-6 h-6 text-pink-300 opacity-40" fill="currentColor" />
-          ) : (
-            <Sparkles className="w-6 h-6 text-yellow-300 opacity-40" />
-          )}
-        </motion.div>
-      ))}
+      {[...Array(15)].map((_, i) => {
+        const randomX = Math.random();
+        const randomTargetX = Math.random();
+        
+        return (
+          <motion.div
+            key={i}
+            className="absolute"
+            initial={{
+              x: randomX * dimensions.width,
+              y: dimensions.height + 50,
+            }}
+            animate={{
+              y: -100,
+              x: randomTargetX * dimensions.width,
+            }}
+            transition={{
+              duration: 10 + Math.random() * 10,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+          >
+            {i % 2 === 0 ? (
+              <Heart className="w-6 h-6 text-pink-300 opacity-40" fill="currentColor" />
+            ) : (
+              <Sparkles className="w-6 h-6 text-yellow-300 opacity-40" />
+            )}
+          </motion.div>
+        );
+      })}
       
 
       
