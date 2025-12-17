@@ -69,12 +69,12 @@ export function MemoryLane({ onContinue }: MemoryLaneProps) {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950 overflow-hidden py-20">
+    <div className="relative w-full min-h-screen bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950 overflow-hidden py-12 md:py-20">
       <FloatingParticles />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <motion.h2
-          className="text-6xl text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-yellow-300 to-pink-300"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-yellow-300 to-pink-300"
           style={{ fontFamily: "'Dancing Script', cursive" }}
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ export function MemoryLane({ onContinue }: MemoryLaneProps) {
         </motion.h2>
 
         <motion.p
-          className="text-center text-pink-200 text-xl mb-16"
+          className="text-center text-pink-200 text-base sm:text-lg md:text-xl mb-8 md:mb-16 px-4"
           style={{ fontFamily: "'Dancing Script', cursive" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -138,16 +138,16 @@ export function MemoryLane({ onContinue }: MemoryLaneProps) {
           {/* Navigation arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-colors border-2 border-yellow-400/50"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-colors border-2 border-yellow-400/50"
           >
-            <ChevronLeft className="w-8 h-8 text-yellow-300" />
+            <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-300" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-colors border-2 border-yellow-400/50"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-colors border-2 border-yellow-400/50"
           >
-            <ChevronRight className="w-8 h-8 text-yellow-300" />
+            <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-300" />
           </button>
         </div>
 
@@ -168,7 +168,7 @@ export function MemoryLane({ onContinue }: MemoryLaneProps) {
 
         {/* Continue button */}
         <motion.div
-          className="flex justify-center mt-16"
+          className="flex justify-center mt-8 md:mt-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -177,9 +177,9 @@ export function MemoryLane({ onContinue }: MemoryLaneProps) {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={onContinue}
-            className="px-12 py-4 bg-gradient-to-r from-yellow-400 via-pink-400 to-yellow-400 text-purple-900 rounded-full shadow-2xl border-2 border-yellow-300"
+            className="px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 via-pink-400 to-yellow-400 text-purple-900 rounded-full shadow-2xl border-2 border-yellow-300"
           >
-            <span className="text-2xl" style={{ fontFamily: "'Dancing Script', cursive" }}>
+            <span className="text-xl sm:text-2xl" style={{ fontFamily: "'Dancing Script', cursive" }}>
               Continue the Journey →
             </span>
           </motion.button>
@@ -279,12 +279,12 @@ function MemoryCard({ memory, onCardClick, preview, hearts = [] }: MemoryCardPro
   return (
     <motion.div
       className={`relative bg-white rounded-2xl overflow-hidden shadow-2xl border-4 border-yellow-400 ${
-        preview ? 'cursor-pointer w-64' : 'cursor-pointer w-80'
+        preview ? 'cursor-pointer w-48 sm:w-56 md:w-64' : 'cursor-pointer w-64 sm:w-72 md:w-80'
       }`}
       whileHover={!preview ? { scale: 1.05, rotateZ: 2 } : {}}
       onClick={(e) => !preview && onCardClick(memory, e)}
     >
-      <div className={`relative ${preview ? 'h-80' : 'h-96'} overflow-hidden`}>
+      <div className={`relative ${preview ? 'h-64 sm:h-72 md:h-80' : 'h-80 sm:h-88 md:h-96'} overflow-hidden`}>
         <ImageWithFallback
           src={memory.image}
           alt={memory.caption}

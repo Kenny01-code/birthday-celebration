@@ -32,9 +32,9 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
         }}
       />
 
-      <div className="relative z-10 text-center max-w-4xl px-8">
+      <div className="relative z-10 text-center max-w-4xl px-4 sm:px-8">
         <motion.h2
-          className="text-5xl mb-12 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-yellow-300 to-pink-300"
+          className="text-3xl sm:text-4xl md:text-5xl mb-8 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-yellow-300 to-pink-300"
           style={{ fontFamily: "'Dancing Script', cursive" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -45,14 +45,14 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
         {/* Interactive Gift Box */}
         <div className="relative">
           <motion.div
-            className="relative w-80 h-80 mx-auto cursor-pointer"
+            className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleGiftClick}
           >
             {/* Gift Box Body */}
             <motion.div
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64 h-48 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl"
+              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-36 sm:w-56 sm:h-40 md:w-64 md:h-48 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl"
               animate={clickCount > 0 ? { y: 10 } : {}}
             >
               {/* Box pattern */}
@@ -60,12 +60,12 @@ export function InteractiveGiftBox({ onComplete }: InteractiveGiftBoxProps) {
               <div className="absolute inset-8 border-2 border-yellow-200 rounded opacity-30" />
               
               {/* Vertical ribbon */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-12 h-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 shadow-lg" />
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 sm:w-10 md:w-12 h-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 shadow-lg" />
             </motion.div>
 
             {/* Gift Box Lid */}
             <motion.div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 w-72 h-20 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl origin-bottom"
+              className="absolute top-0 left-1/2 transform -translate-x-1/2 w-52 h-16 sm:w-60 sm:h-18 md:w-72 md:h-20 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-lg shadow-2xl origin-bottom"
               animate={clickCount > 0 ? { rotateX: -45, y: -30, z: 20 } : {}}
               style={{ transformStyle: 'preserve-3d' }}
               transition={{ duration: 0.8, ease: 'easeOut' }}

@@ -75,7 +75,12 @@ export function GrandFinale() {
           animation: luxuryGlow 3s ease-in-out infinite;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 40px rgba(255, 215, 0, 0.4));
+          filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+        }
+        @media (min-width: 768px) {
+          .luxury-text {
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 40px rgba(255, 215, 0, 0.4));
+          }
         }
         @keyframes luxuryGlow {
           0%, 100% { background-position: 0% 50%; }

@@ -36,12 +36,12 @@ export function MiniGames({ onComplete }: MiniGamesProps) {
 
 
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 overflow-hidden py-20">
+    <div className="relative w-full min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 overflow-hidden py-12 md:py-20">
       <FloatingParticles />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
         <motion.h2
-          className="text-6xl text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-yellow-300 to-pink-300"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-yellow-300 to-pink-300"
           style={{ fontFamily: "'Dancing Script', cursive" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -60,14 +60,14 @@ export function MiniGames({ onComplete }: MiniGamesProps) {
               className="mt-16"
             >
               <motion.p
-                className="text-center text-2xl text-pink-200 mb-4"
+                className="text-center text-lg sm:text-xl md:text-2xl text-pink-200 mb-4 px-4"
                 style={{ fontFamily: "'Dancing Script', cursive" }}
               >
                 Click the hearts to reveal sweet messages! 💝
               </motion.p>
               
               <motion.p
-                className="text-center text-xl text-yellow-300 mb-12"
+                className="text-center text-base sm:text-lg md:text-xl text-yellow-300 mb-8 md:mb-12 px-4"
                 style={{ fontFamily: "'Dancing Script', cursive" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

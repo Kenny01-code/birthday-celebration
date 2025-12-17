@@ -90,9 +90,9 @@ export function FriendshipMemoryBook({ onComplete }: FriendshipMemoryBookProps) 
     }}>
       <FloatingParticles />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
         <motion.h2
-          className="text-6xl text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-yellow-300 to-pink-300"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-6 md:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-yellow-300 to-pink-300"
           style={{ fontFamily: "'Dancing Script', cursive" }}
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
