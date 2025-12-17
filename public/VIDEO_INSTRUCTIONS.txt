@@ -1,0 +1,7 @@
+PUT YOUR MP4 VIDEO HERE:
+- Location: This folder (public/)
+- Example: birthday-video.mp4
+- Access in code: src="/birthday-video.mp4"
+
+The webapp can then play your video using:
+<video src="/your-video-name.mp4" />
